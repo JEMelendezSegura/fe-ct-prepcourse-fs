@@ -160,9 +160,8 @@ function operadoresLogicos(num1, num2, num3) {
   }
   if (num3 > num1 && num3 > num2){
       return (num3 + 1);
-  }
-  if (num2 > num1 && num2 > num3){
-      return false;
+  } else {
+   return false;
   }
 }
 
@@ -173,6 +172,20 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num < 0 || num === 1 || num === 0){
+      return false;
+   } else {
+      if (num === 2){
+         return false;
+      } else {
+         for (let i = 2 ; i < num ; i++){
+            if (num % i === 0){
+               return false;
+            }
+         }
+      }
+   }
+   return true;
 }
 
 function esVerdadero(valor) {
