@@ -22,6 +22,11 @@ function nuevoUsuario(nombre, email, password) {
    // Este debe tener las propiedades: "nombre", "email" y "password" con sus respectivos valores.
    // Retornar el objeto.
    // Tu código:
+   var usuario = {};
+   usuario.nombre = nombre;
+   usuario.email = email;
+   usuario.password = password;
+   return usuario;
 }
 
 function agregarPropiedad(objeto, propiedad) {
@@ -30,6 +35,8 @@ function agregarPropiedad(objeto, propiedad) {
    // Esta propiedad será igual al valor `null`.
    // Retornar el objeto.
    // Tu código:
+   objeto[propiedad] = null;
+   return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -37,12 +44,16 @@ function invocarMetodo(objeto, metodo) {
    // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
    // [NOTA]: no necesitar retornar nada.
    // Tu código:
+   objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
+   var resultado = 0;
+   resultado = (objetoMisterioso.numeroMisterioso * 5);
+   return resultado;
 }
 
 function eliminarPropiedad(objeto, propiedad) {
