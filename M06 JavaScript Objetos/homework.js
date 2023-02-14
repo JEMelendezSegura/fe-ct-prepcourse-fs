@@ -60,24 +60,42 @@ function eliminarPropiedad(objeto, propiedad) {
    // El parámetro "propiedad" es una propiedad del objeto que recibes.
    // Debes eliminarla del objeto y retornarlo finalmente.
    // Tu código:
+   delete objeto[propiedad];
+   return objeto;
 }
 
 function tieneEmail(objetoUsuario) {
    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
    // En ese caso retornar True. Caso contrario, False.
    // Tu código:
+   if(objetoUsuario.email){
+      return true;
+   } else {
+      return false;
+   }
 }
 
 function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
    // En ese caso retornar True. Caso contrario, False.
    // Tu código:
+   var todasLasPropiedades = Object.keys(objeto);
+   for (let i = 0 ; i < todasLasPropiedades.length ; i++){
+      if (objeto[propiedad]){
+         return true;
+      }
+   }
+   return false;
 }
 
 function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar True. Caso contrario, False.
    // Tu código:
+   if((objetoUsuario["password"]) === password){
+      return true;
+   }
+   return false;
 }
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
