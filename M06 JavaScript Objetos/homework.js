@@ -103,6 +103,8 @@ function actualizarPassword(objetoUsuario, nuevaPassword) {
    // La nueva contraseña la recibes por parámetro.
    // Retornar el objeto.
    // Tu código:
+   objetoUsuario.password = nuevaPassword;
+   return objetoUsuario;
 }
 
 function agregarAmigo(objetoUsuario, nuevoAmigo) {
@@ -110,6 +112,8 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
+   objetoUsuario.amigos.push (nuevoAmigo);
+   return objetoUsuario;
 }
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
@@ -118,6 +122,10 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // Define esta propiedad de todos los usuarios como True.
    // Retornar el arreglo.
    // Tu código:
+   for (let i = 0 ; i < objetoMuchosUsuarios.length ; i++){
+      objetoMuchosUsuarios[i].esPremium = true;
+   }
+   return objetoMuchosUsuarios;
 }
 
 function sumarLikesDeUsuario(objetoUsuario) {
@@ -126,6 +134,11 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
+   var sumaLikes = 0;
+   for (let i = 0 ; i < objetoUsuario.posts.length ; i++){
+      sumaLikes = sumaLikes + objetoUsuario.posts[i].likes;
+   }
+   return sumaLikes;
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
@@ -139,6 +152,11 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+   var preciofinal = 0;
+   objetoProducto["calcularPrecioDescuento"] = function (){
+      return objetoProducto.precio - (objetoProducto.precio * objetoProducto.porcentajeDeDescuento);
+   }
+   return objetoProducto;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
